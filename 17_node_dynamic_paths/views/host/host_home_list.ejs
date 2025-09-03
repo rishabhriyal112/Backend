@@ -4,7 +4,7 @@
     <%- include('../partials/nav') %>
     <main class="max-w-4xl mx-auto px-6 py-12">
         <div class="bg-white rounded-xl shadow-lg p-10">
-            <h2 class="text-4xl font-bold text-gray-800 text-center mb-10">Welcome to airbnb index page : </h2>
+            <h2 class="text-4xl font-bold text-gray-800 text-center mb-10">Hey Host! Here are your homes : </h2>
             
             <% if (registeredHomes && registeredHomes.length > 0) { %>
                 <div class="space-y-6">
@@ -37,7 +37,13 @@
                                     </p>
                                 <% } %>
                             </div>
-                            <button class="w-full mt-4 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium">Book</button>
+                            <button class=" mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium"><a href="/host/edit_home/<%=home.id%>?editing=true">Edit</a></button>
+
+                            <form action="/host/delete_home/<%=home.id%>" method="POST" >
+
+                                <button class=" mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors font-medium">Delete</button>
+
+                           </form>
                         </div>
                     <% }) %>
                 </div>

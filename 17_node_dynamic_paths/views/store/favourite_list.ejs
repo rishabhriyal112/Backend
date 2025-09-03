@@ -6,9 +6,9 @@
         <div class="bg-white rounded-xl shadow-lg p-10">
             <h2 class="text-4xl font-bold text-gray-800 text-center mb-10">Here are our favourites : </h2>
             
-            <% if (registeredHomes && registeredHomes.length > 0) { %>
+            <% if (favouriteHomes && favouriteHomes.length > 0) { %>
                 <div class="space-y-6">
-                    <% registeredHomes.forEach(home => { %>
+                    <% favouriteHomes.forEach(home => { %>
                         <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                             <% if (home.image) { %>
                                 <img src="<%= home.image %>" alt="<%= home.houseName %>" class="w-full h-48 object-cover rounded-lg mb-4">
@@ -37,15 +37,17 @@
                                     </p>
                                 <% } %>
                             </div>
-                            <button class="w-full mt-4 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium">Book</button>
+                            <form action="/favourites/delete/<%=home.id%>" method="POST">
+                                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors font-medium" type="submit">Remove from favourite</button>
+                            </form>
                         </div>
                     <% }) %>
                 </div>
             <% } else { %>
                 <div class="text-center py-12">
                     <div class="text-gray-400 text-6xl mb-4">🏠</div>
-                    <p class="text-gray-500 text-lg">No homes registered yet</p>
-                    <p class="text-gray-400 text-sm mt-2">Click "Add Home" to register your first property</p>
+                    <p class="text-gray-500 text-lg">No Favourites </p>
+                    <p class="text-gray-400 text-sm mt-2">Click "Add to Favourite" to pick your favourite home</p>
                 </div>
             <% } %>
         </div>
