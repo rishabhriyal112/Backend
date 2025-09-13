@@ -1,0 +1,26 @@
+[
+    {
+        "houseName": "Townwell",
+        "price": "599",
+        "location": "NewYork",
+        "rating": "4",
+        "image": "https://images.pexels.com/photos/13012304/pexels-photo-13012304.jpeg",
+        "id": "1"
+    },
+    {
+        "id": "2",
+        "houseName": "NewCastle",
+        "price": "999",
+        "location": "UK",
+        "rating": "5",
+        "image": "https://images.pexels.com/photos/3358880/pexels-photo-3358880.png"
+    },
+    {
+        "houseName": "Birmingham palace",
+        "price": "799",
+        "location": "UK",
+        "rating": "3",
+        "image": "https://images.pexels.com/photos/33518622/pexels-photo-33518622.jpeg",
+        "id": "064918"
+    }
+]
